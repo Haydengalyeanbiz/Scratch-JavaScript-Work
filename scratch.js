@@ -1,5 +1,26 @@
-console.log('hi');
+/*
+Define a function called selectElementsInRange that takes in three parameters.
+The first parameter should be an array. 
 
-kj;llfh;ojashdf;lujha;jkhf;outerHeight;aj
+The second parameter should be a
+starting number in a range of indices, and the third parameter should be the
+ending number in the range.
 
-;laksdjhf;ojuasdh;ofihesa;odjh
+ The function should return all elements that have
+indices within the range of indices defined by the starting and ending numbers,
+inclusive.
+*/
+
+//           Steps     
+/*
+I: Three parameters , 1st one should be an array
+O: return new array with defined indices.
+*/
+
+function selectElementsInRange(arr, num1, num2){
+    return arr.slice(num1, num2 + 1);
+  }
+  
+  console.log(selectElementsInRange([1, 2, 3], 0, 1));        // [1, 2]
+  console.log(selectElementsInRange([2, 6, 9, 3, 1], 0, 3));  // [2, 6, 9, 3]
+  console.log(selectElementsInRange([7, 9, 10, 4, 5], 2, 4)); // [10, 4, 5]
