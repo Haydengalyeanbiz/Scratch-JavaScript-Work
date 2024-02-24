@@ -85,7 +85,6 @@ let sillyString = function(word){
 // console.log(sillyString('italy'));      // ibitabaly
 // console.log(sillyString('scooter'));    // scobooboteber
 
-
 /*
 Write a function twoDimensionalProduct(array) that takes in a 2D array of numbers as an argument. 
 The function should return the total product of all numbers multiplied together.
@@ -112,10 +111,6 @@ let twoDimensionalProduct = function(arr){
   return productSum;
 }
 
-
-
-
-
 let arr1 = [
   [6, 4],
   [5],
@@ -125,10 +120,6 @@ let arr1 = [
 
 let arr2 = [[11, 4],[2]];
 // console.log(twoDimensionalProduct(arr2)); // 88
-
-
-
-
 
 /*
 Write a function maxColumn(matrix) that takes in a 2-dimensional array (matrix) and returns an array containing the maximum value in each column. 
@@ -147,7 +138,6 @@ O: Array containing the MAXIMUM value in each COLUMN.
       4.3 IF IS greater, add to new array.
         5. return new array. 
 */
-
 
 function maxColumn(matrix) {
   let newArr = [0, 0, 0];
@@ -202,4 +192,69 @@ function twoSum(arr, target){
 // console.log(twoSum([4, 6, 2, 3], 8)); // true
 // console.log(twoSum([4, 6, 2, 3], 11)); // false
 
+/*
+Define a function doubler that takes an array of numbers and returns the
+same array but every element of the array is multiplied by 2.
 
+I: An ARRAY of numbers
+O: Same ARRAY multiplied by 2.
+
+1.Define a function doubler that takes in an ARRAY.
+  2. declare a new ARRAY to hold the variables.
+    3.loop through the array.
+    4.multiply the Indice by 2.
+      4.2 push the doubled indice to the new ARRAY 
+        5. return new array.
+*/
+
+function doubler(array){
+  for (let i = 0; i < array.length; i++){
+    array[i] *= 2;
+  }
+  return array;
+}
+
+// let nums1 = [1, 2, 3, 4];
+// let doubled1 = doubler(nums1)
+// console.log(doubled1);          // => [2, 4, 6, 8]
+// console.log(nums1 === doubled1) //=> true
+
+// let nums2 = [7, 1, 8];
+// let doubled2 = doubler(nums2)
+// console.log(doubled2);          // => [14, 2, 16]
+// console.log(nums2 === doubled2) //=> true
+
+// let nums3 = [];
+// let doubled3 = doubler(nums3)
+// console.log(doubled3);          // => []
+// console.log(nums3 === doubled3) //=> true
+
+
+/*
+Write a function additionMutator that accepts an array and a number as an arguments. 
+The function should mutate the input array such that every element has the given number added to it.
+
+I: An ARRAY and A NUMBER.
+O: SAME ARRAY MUTATED
+
+1. Define the function that accepts an ARRAY and a NUMBER.
+  2. loop through the ARRAY 
+  2.3 add the NUMBER with the ARRAY indice
+    3. return mutated array.
+
+*/
+
+let additionMutator = function(array, number){
+  for(let i = 0; i < array.length; i++){
+    array[i] += number;
+  }
+  return array;
+}
+
+// let nums1 = [3, 7, 1, 2];
+// additionMutator(nums1, 4);
+// console.log(nums1);     // [ 7, 11, 5, 6 ]
+
+// let nums2 = [11, 9, 4];
+// additionMutator(nums2, -1);
+// console.log(nums2);     // [ 10, 8, 3 ]
