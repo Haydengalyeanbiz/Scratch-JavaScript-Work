@@ -309,15 +309,117 @@ let yeller = function(array){
 
 
 
-let words1 = ['hello', 'world'];
-let yelled1 = yeller(['hello', 'world']);
-console.log(yelled1);              //=> [ 'HELLO!', 'WORLD!' ]
-console.log(words1 === yelled1);   //=> false
-console.log(words1[0] === 'hello'); //=> true
+// let words1 = ['hello', 'world'];
+// let yelled1 = yeller(['hello', 'world']);
+// console.log(yelled1);              //=> [ 'HELLO!', 'WORLD!' ]
+// console.log(words1 === yelled1);   //=> false
+// console.log(words1[0] === 'hello'); //=> true
 
-let words2 = ['hello', 'world'];
-let yelled2 = yeller(['kiwi', 'orange', 'mango']);
-console.log(yelled2);              //=> [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
-console.log(words2 === yelled2);   //=> false
-console.log(words2[0] === 'hello'); //=> true
+// let words2 = ['hello', 'world'];
+// let yelled2 = yeller(['kiwi', 'orange', 'mango']);
+// console.log(yelled2);              //=> [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
+// console.log(words2 === yelled2);   //=> false
+// console.log(words2[0] === 'hello'); //=> true
 
+/*
+Define a function called mirror that takes in an array as a parameter and
+returns a new array where all the elements in the original array added to the
+new array twice with the second set of elements in reverse order.
+
+I: Array containing words.
+O : NEW array with an added MIRRORED word after the original word.
+
+1. define the function mirror that takes in an array.
+  2. declare a NEW ARRAY.
+    3. Loop through the array to each Indice of the array.
+    3.2 Push the original indice to the new array FOLLOWED by that word reversed. 
+      4. return the new array.
+*/
+
+let mirror = function(array){
+  let newArray = [];
+  newArray = array;
+  for (let i = array.length - 1; i >= 0; i--){
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+
+// console.log(mirror([1,2,3])); //=> [ 1, 2, 3, 3, 2, 1 ]
+// console.log(mirror(['a', 'b', 'c', 'd']));
+// => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
+
+/* 
+Write a function alternatingWords that accepts an array of words as an argument. 
+The function should mutate the input array such that the words alternate between fully uppercase or lowercase. 
+The first word should be uppercase.
+
+I: ARRAY of words
+O: same ARRAY MUTATED
+
+1. define the function alternatingWords that takes in an array.
+  2.loop through the array
+  3.1 Use a conditional to check IF the word is UpperCase
+    3.2 If is uppercase then switch lower case.
+      4.1 Use a conditional to check IF the word is LowerCase
+      4.2 IF is lowercase then switch to UpperCase 
+        5. return the array.
+*/
+
+let alternatingWords = function(array){
+  for(let i = 0; i < array.length; i++){
+    if (i % 2 === 0){
+      array[i] = array[i].toUpperCase();
+    }else if (i % 2 !== 0){
+      array[i] = array[i].toLowerCase();
+    }
+  }
+  return array;
+}
+
+
+
+// let words1 = [ 'Belka', 'STRELKA', 'laika', 'DEZIK' ];
+// alternatingWords(words1);
+// // console.log(words1); // [ 'BELKA', 'strelka', 'LAIKA', 'dezik' ]
+
+// let words2 = [ 'Yellowstone', 'Yosemite', 'Zion', 'Acadia', 'Shenandoah' ];
+// alternatingWords(words2);
+// console.log(words2); // [ 'YELLOWSTONE', 'yosemite', 'ZION', 'acadia', 'SHENANDOAH' ]
+
+/*
+Define a function lessThan5 that takes an array of numbers and returns a NEW
+array containing all the numbers in the input array that are less than 5.
+
+I: a ARRAY
+O: NEW ARRAY
+
+1. define the function lessThan5 that takes in an ARRAY.
+  2.declare a NEW array.  
+    3. Loop through the array's indices.
+      4. see IF the array indice is LESS than 5.
+      4.2 IF it is PUSH the indice to the new array.
+        5 return the NEW array.
+*/
+
+let lessThan5 = function(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if (array[i] < 5){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+
+
+let nums1 = [1, -5, 10, 6, 2];
+let filteredNums1 = lessThan5(nums1);
+console.log(filteredNums1);           //=> [1, -5, 2]
+console.log(nums1 === filteredNums1); //=> false
+
+let nums2 = [1, 2, 3, 4, 5, 6];
+let filteredNums2 = lessThan5(nums2);
+console.log(filteredNums2);           //=> [1, 2, 3, 4]
+console.log(nums2 === filteredNums2); //=> false
