@@ -258,3 +258,66 @@ let additionMutator = function(array, number){
 // let nums2 = [11, 9, 4];
 // additionMutator(nums2, -1);
 // console.log(nums2);     // [ 10, 8, 3 ]
+
+/*
+Write a function tripler(nums) that takes in an array as an arg. 
+The function should return a new array containing three times every number of the original array.
+
+I: Array
+O: NEW array
+
+1.define the function Tripler, that accepts an array.
+  2.declare a NEW array variable.
+    3.Loop through the array
+    3.2 take the array indice and multiply times 3.
+      4.Push that value to the new array.
+        5. return the new Array.
+*/
+
+let tripler = function(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    newArray.push(array[i] * 3);
+  };
+  return newArray;
+};
+
+// console.log(tripler([2, 7, 4])); // [ 6, 21, 12 ]
+// console.log(tripler([-5, 10, 0, 11])); // [ -15, 30, 0, 33 ]
+
+/*
+Define a function yeller that takes in an array of words. The function should
+return a NEW array where each element of the original array is yelled.
+
+I: Array of words.
+O: NEW array of YELLED words.
+
+1. Define a function yelled that takes in an array of words.
+  2. declare a NEW Array to store the yelled words.
+  2.1 loop through the array.
+    3. Push the array indice UPPERCASED + !,
+    4. Return the new array.
+*/
+
+let yeller = function(array){
+  let newArray = [];
+  for (let i = 0; i < array.length; i++){
+    newArray.push(array[i].toUpperCase() + "!")
+  }
+  return newArray;
+}
+
+
+
+let words1 = ['hello', 'world'];
+let yelled1 = yeller(['hello', 'world']);
+console.log(yelled1);              //=> [ 'HELLO!', 'WORLD!' ]
+console.log(words1 === yelled1);   //=> false
+console.log(words1[0] === 'hello'); //=> true
+
+let words2 = ['hello', 'world'];
+let yelled2 = yeller(['kiwi', 'orange', 'mango']);
+console.log(yelled2);              //=> [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
+console.log(words2 === yelled2);   //=> false
+console.log(words2[0] === 'hello'); //=> true
+
