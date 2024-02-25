@@ -487,20 +487,138 @@ For example, since 64 = 8 * 8 and 144 = 12 * 12, 64 and 144 are perfect squares;
 I: A NUMBER
 O: A BOOLEAN
 
-1. 
+1. write the function isPerfectSquare that takes in a number.
+  2. 
 */
 
+let isPerfectSquare = function(num){
+  for(i = 1; i <= num; i++){
+      if(i * i === num){
+        return true;
+      }
+  }
+  return false;
+}
 
 
 
 
-console.log(isPerfectSquare(1))     // true
-console.log(isPerfectSquare(4))     // true
-console.log(isPerfectSquare(64))    // true
-console.log(isPerfectSquare(100))   // true
-console.log(isPerfectSquare(169))   // true
-console.log(isPerfectSquare(2))     // false
-console.log(isPerfectSquare(40))    // false
-console.log(isPerfectSquare(32))    // false
-console.log(isPerfectSquare(50))    // false
+// console.log(isPerfectSquare(1))     // true
+// console.log(isPerfectSquare(4))     // true
+// console.log(isPerfectSquare(64))    // true
+// console.log(isPerfectSquare(100))   // true
+// console.log(isPerfectSquare(169))   // true
+// console.log(isPerfectSquare(2))     // false
+// console.log(isPerfectSquare(40))    // false
+// console.log(isPerfectSquare(32))    // false
+// console.log(isPerfectSquare(50))    // false
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Write a function dynamicFizzBuzz that accepts three arguments (max, num1, and num2). 
+The function should return an array containing positive numbers less than max that are divisible by num1 or num2, but not both.
+
+I: THREE arguments (MAX, NUM1, NUM2)
+O: AN ARRAY
+
+1. define the function dynamicFizzBuzz 
+  2. declare a NEW ARRAY variable.
+    3.loop through the index thats LESS THAN the max. 
+      3.1 See IF the the indices are divisble by NUM1 and NUM2 but !NOT both.
+        4. IF it is then PUSH that number to the NEW ARRAY. 
+          5. return the NEW ARRAY.
+*/
+
+let dynamicFizzBuzz = function(max, num1, num2){
+  let newArray = [];
+  for(let i = 1; i < max; i++){
+    if ((i % num1 === 0 && i % num2 !== 0) || (i % num2 === 0 && i % num1 !== 0)){
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
+
+
+
+// console.log(dynamicFizzBuzz(20, 3, 5)); // [ 3, 5, 6, 9, 10, 12, 18 ]
+// console.log(dynamicFizzBuzz(24, 4, 6)); // [ 4, 6, 8, 16, 18, 20 ] 
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* 
+Write a function evenNumbers(max) that takes in a number as an arg. 
+The function should return an array containing all positive, even numbers that are less than max. 
+
+I: An Array
+O: a NEW Array
+*/
+
+let evenNumbers = function(max){
+  let newArray = [];
+  for (let i = 1; i < max; i++){
+    if(i % 2 === 0){
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
+
+
+// console.log(evenNumbers(7)); // [ 2, 4, 6 ]
+// console.log(evenNumbers(12)); // [ 2, 4, 6, 8, 10 ]
+// console.log(evenNumbers(15)); // [ 2, 4, 6, 8, 10, 12, 14 ]
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* 
+Write a function factorsOf(num) that takes in a number as an arg. 
+The method should return an array containing all positive numbers that are able to divide into num with no remainder. 
+
+Define this function using function expression syntax.
+
+I: A NUMBER
+O: A NEW ARRAY
+*/
+
+let factorsOf = function(number){
+  let newArray = [];
+  for (let i = 1; i <= number; i++){
+    console.log(i);
+    if(number % i === 0){
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
+
+// console.log(factorsOf(5)); // [ 1, 5 ]
+// console.log(factorsOf(8)); // [ 1, 2, 4, 8 ]
+// console.log(factorsOf(9)); // [ 1, 3, 9 ]
+// console.log(factorsOf(10)); // [ 1, 2, 5, 10 ]
+// console.log(factorsOf(24)); // [ 1, 2, 3, 4, 6, 8, 12, 24 ]
+// console.log(factorsOf(2017)); // [ 1, 2017 ]
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* 
+Write a function pitPat(max) that accepts a number as an arg. 
+The function should return an array containing all positive numbers less than or equal to max that are divisible by either 4 or 6, but not both.
+
+I: A NUMBER
+O: A NEW ARRAY
+
+1. define the function that takes in a number.
+  2. declare a NEW ARRAY variable.
+    3. loop through the indice's of number ( <= )
+    3.2 see IF indice is divisble by 4 || 6 !NOT both. 
+    3.3 IF it is then PUSH to new Array.
+      4.return the NEW ARRAY.
+*/
+
+let pitPat = function(number){
+  let newArray = [];
+  for (let i = 1; i <= number; i++){
+    if ((i % 4 === 0 && i % 6 !== 0) || (i % 6 === 0 && i % 4 !== 0)){
+      newArray.push(i)
+    }
+  }
+  return newArray;
+}
+
+// console.log(pitPat(18)); // [ 4, 6, 8, 16, 18 ]
+// console.log(pitPat(30)); // [ 4, 6, 8, 16, 18, 20, 28, 30 ]
 /*---------------------------------------------------------------------------------------------------------------------------*/
