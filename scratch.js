@@ -18,13 +18,13 @@ O: return new array with defined indices.
 */
 
 function selectElementsInRange(arr, num1, num2){
-    return arr.slice(num1, num2 + 1);
+  return arr.slice(num1, num2 + 1);
 }
   
   // console.log(selectElementsInRange([1, 2, 3], 0, 1));        // [1, 2]
   // console.log(selectElementsInRange([2, 6, 9, 3, 1], 0, 3));  // [2, 6, 9, 3]
   // console.log(selectElementsInRange([7, 9, 10, 4, 5], 2, 4)); // [10, 4, 5]
-  
+/*---------------------------------------------------------------------------------------------------------------------------*/ 
 /*
 Define a function called oddRange that takes in a number parameter and returns
 an array  containing all positive odd numbers up to that number.
@@ -43,7 +43,7 @@ function oddRange(num){
 
 // console.log(oddRange(13)); // => [ 1, 3, 5, 7, 9, 11, 13 ]
 // console.log(oddRange(6));  // => [ 1, 3, 5 ]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function sillyString that accepts a word as an argument. 
 The function should return a new word where every vowel of the original word is followed by 'b' and that same vowel. 
@@ -84,7 +84,7 @@ let sillyString = function(word){
 // console.log(sillyString('cats'));       // cabats
 // console.log(sillyString('italy'));      // ibitabaly
 // console.log(sillyString('scooter'));    // scobooboteber
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function twoDimensionalProduct(array) that takes in a 2D array of numbers as an argument. 
 The function should return the total product of all numbers multiplied together.
@@ -120,7 +120,7 @@ let arr1 = [
 
 let arr2 = [[11, 4],[2]];
 // console.log(twoDimensionalProduct(arr2)); // 88
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function maxColumn(matrix) that takes in a 2-dimensional array (matrix) and returns an array containing the maximum value in each column. 
 The array length should be equal to the number of columns, such that returnArray[i] is equal to the max value in the ith column.
@@ -157,7 +157,7 @@ matrix = [[ 5,  9, 21],
           [12, 14, 15]]
 
 //console.log(maxColumn(matrix)); // [12, 19, 21]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function twoSum(arr, target) that accepts an array and a target number as args. 
 The function should a return a boolean indicating if two distinct numbers of the array add up to the target value. 
@@ -191,7 +191,7 @@ function twoSum(arr, target){
 // console.log(twoSum([1, 7, 3, 0, 2], 6)); // false
 // console.log(twoSum([4, 6, 2, 3], 8)); // true
 // console.log(twoSum([4, 6, 2, 3], 11)); // false
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Define a function doubler that takes an array of numbers and returns the
 same array but every element of the array is multiplied by 2.
@@ -228,8 +228,7 @@ function doubler(array){
 // let doubled3 = doubler(nums3)
 // console.log(doubled3);          // => []
 // console.log(nums3 === doubled3) //=> true
-
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function additionMutator that accepts an array and a number as an arguments. 
 The function should mutate the input array such that every element has the given number added to it.
@@ -258,7 +257,7 @@ let additionMutator = function(array, number){
 // let nums2 = [11, 9, 4];
 // additionMutator(nums2, -1);
 // console.log(nums2);     // [ 10, 8, 3 ]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Write a function tripler(nums) that takes in an array as an arg. 
 The function should return a new array containing three times every number of the original array.
@@ -284,7 +283,7 @@ let tripler = function(array){
 
 // console.log(tripler([2, 7, 4])); // [ 6, 21, 12 ]
 // console.log(tripler([-5, 10, 0, 11])); // [ -15, 30, 0, 33 ]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Define a function yeller that takes in an array of words. The function should
 return a NEW array where each element of the original array is yelled.
@@ -307,8 +306,6 @@ let yeller = function(array){
   return newArray;
 }
 
-
-
 // let words1 = ['hello', 'world'];
 // let yelled1 = yeller(['hello', 'world']);
 // console.log(yelled1);              //=> [ 'HELLO!', 'WORLD!' ]
@@ -320,7 +317,7 @@ let yeller = function(array){
 // console.log(yelled2);              //=> [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
 // console.log(words2 === yelled2);   //=> false
 // console.log(words2[0] === 'hello'); //=> true
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Define a function called mirror that takes in an array as a parameter and
 returns a new array where all the elements in the original array added to the
@@ -348,7 +345,7 @@ let mirror = function(array){
 // console.log(mirror([1,2,3])); //=> [ 1, 2, 3, 3, 2, 1 ]
 // console.log(mirror(['a', 'b', 'c', 'd']));
 // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /* 
 Write a function alternatingWords that accepts an array of words as an argument. 
 The function should mutate the input array such that the words alternate between fully uppercase or lowercase. 
@@ -386,7 +383,7 @@ let alternatingWords = function(array){
 // let words2 = [ 'Yellowstone', 'Yosemite', 'Zion', 'Acadia', 'Shenandoah' ];
 // alternatingWords(words2);
 // console.log(words2); // [ 'YELLOWSTONE', 'yosemite', 'ZION', 'acadia', 'SHENANDOAH' ]
-
+/*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 Define a function lessThan5 that takes an array of numbers and returns a NEW
 array containing all the numbers in the input array that are less than 5.
@@ -412,14 +409,98 @@ let lessThan5 = function(array){
   return newArray;
 }
 
+// let nums1 = [1, -5, 10, 6, 2];
+// let filteredNums1 = lessThan5(nums1);
+// console.log(filteredNums1);           //=> [1, -5, 2]
+// console.log(nums1 === filteredNums1); //=> false
+
+// let nums2 = [1, 2, 3, 4, 5, 6];
+// let filteredNums2 = lessThan5(nums2);
+// console.log(filteredNums2);           //=> [1, 2, 3, 4]
+// console.log(nums2 === filteredNums2); //=> false
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* 
+Define a function wordsLongerThan5 that takes in an array of words. 
+The function should return a NEW array containing only the words that are longer
+than 5 characters.
+
+I: ARRAY of words
+O: NEW ARRAY
+
+*/
+
+let wordsLongerThan5 = function(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if (array[i].length > 5){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+// let words1 = ['bike', 'skateboard','scooter', 'moped'];
+// let longerWords1 = wordsLongerThan5(words1);
+// console.log(longerWords1);            //=> [ 'skateboard', 'scooter' ]
+// console.log(words1 === longerWords1); //=> false
+
+// let words2 = ['couscous', 'soup', 'ceviche', 'solyanka' ,'taco'];
+// let longerWords2 = wordsLongerThan5(words2);
+// console.log(longerWords2);            //=> [ 'couscous', 'ceviche', 'solyanka' ]
+// console.log(words2 === longerWords2); //=> false
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Write a function fizzBuzz(max) that accepts a number as an arg. 
+The function should return an array containing all positive numbers less than max that are divisible by either 3 or 5, but not both.
+
+I: A NUMBER 
+O: AN ARRAY
+
+1. define the function that takes in a number.
+  2. declare a NEW ARRAY variable.
+    3. LOOP through the number from 0 to less than number. 
+    3.1 find IF the indice is divisble by either 3 OR 5 !NOT both
+      4.1 IF the number is divisble by 3 OR 5 store it in the NEW array.
+        5. Return the new Array.
+*/
+
+let fizzBuzz = function(max){
+  let newArray  = [];
+  for(let i = 0; i < max; i++){
+    if((i % 3 === 0 && i % 5 !== 0) || (i % 5 === 0 && i % 3 !== 0)){
+      newArray.push(i);
+    }
+  }
+  return newArray;
+}
 
 
-let nums1 = [1, -5, 10, 6, 2];
-let filteredNums1 = lessThan5(nums1);
-console.log(filteredNums1);           //=> [1, -5, 2]
-console.log(nums1 === filteredNums1); //=> false
+// console.log(fizzBuzz(12)); // [ 3, 5, 6, 9, 10 ]
+// console.log(fizzBuzz(20)); // [ 3, 5, 6, 9, 10, 12, 18 ]
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Write a function isPerfectSquare that accepts a number as an argument. 
+The method should return a boolean indicating whether or not the argument is a perfect square. 
+A perfect square is a number that is the product of some number multiplied by itself. 
+For example, since 64 = 8 * 8 and 144 = 12 * 12, 64 and 144 are perfect squares; 35 is not a perfect square.
 
-let nums2 = [1, 2, 3, 4, 5, 6];
-let filteredNums2 = lessThan5(nums2);
-console.log(filteredNums2);           //=> [1, 2, 3, 4]
-console.log(nums2 === filteredNums2); //=> false
+I: A NUMBER
+O: A BOOLEAN
+
+1. 
+*/
+
+
+
+
+
+console.log(isPerfectSquare(1))     // true
+console.log(isPerfectSquare(4))     // true
+console.log(isPerfectSquare(64))    // true
+console.log(isPerfectSquare(100))   // true
+console.log(isPerfectSquare(169))   // true
+console.log(isPerfectSquare(2))     // false
+console.log(isPerfectSquare(40))    // false
+console.log(isPerfectSquare(32))    // false
+console.log(isPerfectSquare(50))    // false
+/*---------------------------------------------------------------------------------------------------------------------------*/
