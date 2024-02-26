@@ -166,9 +166,6 @@ You can assume that input array contains only unique numbers.
 I:Array and a target number.
 O: A BOOLEAN true OR false.
 
-
-1. define the function twoSum(arr,target) 
-2. 
 */
 function twoSum(arr, target){
   let sum = 0;
@@ -621,4 +618,181 @@ let pitPat = function(number){
 
 // console.log(pitPat(18)); // [ 4, 6, 8, 16, 18 ]
 // console.log(pitPat(30)); // [ 4, 6, 8, 16, 18, 20, 28, 30 ]
+/*
+Write a function mostVowels that takes in a sentence string and returns the word of the sentence that contains the most vowels.
+
+I: A sentence string
+O: a word string
+
+1.define a function mostVowels that takes in a sentence.
+  2. declare VOWELS variable.
+    3. .SPLIT the sentence into an ARRAY
+      4. loop through the arrays [i]ndex. 
+        5.loop through the second arrays [i + 1] ndex words.
+        5.2 see IF the arrays[index] vowels are >GREATER than the word before. 
+          6. 
+
+*/
+
+let mostVowels = function(sentence){
+  let vowels = 'aeiou';
+  let splitSen = sentence.split(' ');  // ['what', 'a', 'wonderful', 'life']
+  for(let i = 0; i < splitSen.length; i++){
+    let word1 = splitSen[i];
+    for(let j = i + 1; j < splitSen.length; j++){
+      let word2 = splitSen[j];
+      if(vowels.includes(word1) > vowels.includes(word2)){
+        let foundWord = splitSen.join('')
+        return foundWord;
+      }
+    }
+  }
+}
+
+
+// console.log(mostVowels("what a wonderful life")); // "wonderful"
 /*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+THESE NEXT PROBLEMS ARE A LITTLE BIT HARDER GOING ON ;)
+*/
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+/* 
+Write a function pairProduct that accepts an array of numbers and a product as arguments. 
+The function should return a boolean indicating whether or not a pair of distinct elements in the array result in the product when multiplied together. 
+You may assume that the input array contains unique elements.
+
+I: AN ARRAY of NUMBERS, and A PRODUCT
+O: A BOOLEAN
+
+1. define the function pairProduct that takes in an array and a number. 
+  2. 1st LOOP should start at index 0 up to array LENGTH
+    2.2 2nd LOOP should also start at 0.
+      3. see IF loop1 + loop2  === number. 
+        3.2 IF it does return true.
+*/
+
+let pairProduct =  function(array, number){
+  for(let i = 0; i < array.length; i++){
+    let number1 = array[i];
+    for(let j = 1; j < array.length; j++){
+      let number2 = array[j];
+      if( number1 * number2 === number){
+        return true; 
+      } 
+    }
+  }
+  return false;
+}
+
+// console.log(pairProduct([4, 2, 5, 8], 16))    // true
+// console.log(pairProduct([8, 1, 9, 3], 8))     // true
+// console.log(pairProduct([3, 4], 12))          // true
+// console.log(pairProduct([3, 4, 6, 2, 5], 12)) // true
+// console.log(pairProduct([4, 2, 5, 7], 16))    // false
+// console.log(pairProduct([8, 4, 9, 3], 8))     // false
+// console.log(pairProduct([3], 12))             // false
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Write a function strangeSums that accepts an array of numbers as an argument. 
+The method should return a count of the number of distinct pairs of elements that have a sum of zero. 
+You may assume that the input array contains unique elements.
+
+I: AN ARRAY
+O: A NUMBER (COUNT)
+
+1. Define the function strangeSums that takes in a array.
+  2. declare a COUNTER variable.
+    3. LOOP through the 1st array (i)
+    3.2 LOOP through the array again (j)
+      4. see IF array)(i) + array(j) === 0
+        5. IF it does counter += 1;
+        return counter;
+*/
+let strangeSums = function(array){
+  let counter = 0;
+  for(let i = 0; i < array.length; i++){
+    let number1 = array[i];
+    for(let j = i + 1; j < array.length; j++){
+      let number2 = array[j];
+      if(number1 + number2 === 0){
+        counter += 1;
+      }
+    }
+  }
+  return counter;
+}
+
+// console.log(strangeSums([2, -3, 3, 4, -2]));     // 2
+// console.log(strangeSums([42, 3, -1, -42]));      // 1
+// console.log(strangeSums([-5, 5]));               // 1
+// console.log(strangeSums([19, 6, -3, -20]));      // 0
+// console.log(strangeSums([9]));  
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Write a function unique that accepts an array as an argument. 
+The function should return a new array containing elements of the input array, without duplicates.
+
+I: AN ARRAY
+O: A NEW ARRAY
+
+1. Define the function unique that takes in an array.
+  2. declare a NEW ARRAY variable.
+    3. 1st loop through the index [i]
+    3.1. 
+    3.2 2nd loop through the index [j]
+      4. see IF index[i] !== index[j]
+      4.2 IF it does === skip it
+      4.3 IF it does !NOT then newArray.push the value.
+        5. return the newArray.
+*/
+
+let unique = function(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    for(let j = i + 1; j < array.length; j++){
+      console.log(array[i])
+      console.log("   " + array[j])
+      if(!newArray.includes(array[i])){
+        newArray.push(array[i]);
+      }
+    }
+  }
+  return newArray;
+}
+
+console.log(unique([1, 1, 2, 3, 3])); // [1, 2, 3]
+console.log(unique([11, 7, 8, 10, 8, 7, 7])); // [11, 7, 8, 10]
+console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Define a function called intersect that takes in two array parameters and
+returns a new array containing the elements common to both arr1 and arr2.
+
+I: two ARRAYS
+O: one ARRAY
+
+1.define the function intersect that takes in TWO ARRAYS
+  2.declare a newARRAY variable.
+    3. loop through the 1st array
+    3.2 loop through the second array
+      4.see IF array[i] and array[j] === the same
+      4.2 IF they do then Push to the new array.
+        5. return the newArray.
+*/
+
+let intersect = function(array1, array2){
+  let newArray = [];
+  for(let i = 0; i < array1.length; i++){
+    for(let j = 0; j < array2.length; j++){
+      if (array1[i] === array2[j]){
+        newArray.push(array1[i])
+      }
+    }
+  }
+  return newArray;
+}
+
+// console.log(intersect(['a', 'b', 'c', 'd'], ['b', 'd', 'e'])); //=> [ 'b', 'd' ]
+// console.log(intersect(['a', 'b', 'c'], ['x', 'y', 'z']));      //=> []
