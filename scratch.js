@@ -651,6 +651,16 @@ let mostVowels = function(sentence){
 
 
 // console.log(mostVowels("what a wonderful life")); // "wonderful"
+
+/*
+ Define a function firstAndLast that takes in an array of numbers and returns
+the sum of the first and last element if there is an even number of elements in
+the array.
+ If there is an odd number of elements in the array, then the function
+should return the difference between the first and last elements of the array.
+
+I: 
+*/
 /*---------------------------------------------------------------------------------------------------------------------------*/
 /*
 THESE NEXT PROBLEMS ARE A LITTLE BIT HARDER GOING ON ;)
@@ -762,13 +772,15 @@ let unique = function(array){
   return newArray;
 }
 
-console.log(unique([1, 1, 2, 3, 3])); // [1, 2, 3]
-console.log(unique([11, 7, 8, 10, 8, 7, 7])); // [11, 7, 8, 10]
-console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
+// console.log(unique([1, 1, 2, 3, 3])); // [1, 2, 3]
+// console.log(unique([11, 7, 8, 10, 8, 7, 7])); // [11, 7, 8, 10]
+// console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 /*---------------------------------------------------------------------------------------------------------------------------*/
 /*
-Define a function called intersect that takes in two array parameters and
-returns a new array containing the elements common to both arr1 and arr2.
+Define a function called intersect 
+  that takes in two array parameters and
+    returns a new array 
+      containing the elements common to both arr1 and arr2.
 
 I: two ARRAYS
 O: one ARRAY
@@ -782,7 +794,7 @@ O: one ARRAY
         5. return the newArray.
 */
 
-let intersect = function(array1, array2){
+let intersect = function(array1, array2){ 
   let newArray = [];
   for(let i = 0; i < array1.length; i++){
     for(let j = 0; j < array2.length; j++){
@@ -796,3 +808,267 @@ let intersect = function(array1, array2){
 
 // console.log(intersect(['a', 'b', 'c', 'd'], ['b', 'd', 'e'])); //=> [ 'b', 'd' ]
 // console.log(intersect(['a', 'b', 'c'], ['x', 'y', 'z']));      //=> []
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+A 2-dimensional array is also known as a "matrix". 
+Write a function matrixAddition that accepts two matrices as arguments. 
+The two matrices are guaranteed to have the same "height" and "width". 
+The function should return a new matrix representing the sum of the two arguments. 
+To add matrices, we add the values at the same positions.
+
+I: TWO MATRICES
+O: A NEW MATRIX
+
+1. define the function matricAddition that accepts two matrices. 
+*/
+
+let matrixAddition = function(array1, array2){ //
+  let outerArray = []; //declaring the outer array. 
+  for(let i = 0; i < array1.length; i++){ // loops through the outer array
+    let innerArray = []; // 
+    for(let j = 0; j < array2[i].length; j++){
+      innerArray.push(array1[i][j] + array2[i][j])
+    }
+    outerArray.push(innerArray);
+  }
+  return outerArray;
+}
+
+              //0, 1
+let matrixA = [[2,5],
+               [4,7]]
+
+let matrixB =  [[9,1], 
+                [3,0]]
+
+let matrixC =  [[-1,0], 
+                [0,-1]]
+
+let matrixD = [[2, -5],
+               [7, 10],
+                [0, 1]]
+
+let matrixE = [[0 , 0],
+               [12, 4], 
+               [6,  3]]
+
+// console.log(matrixAddition(matrixA, matrixB)); // [[11, 6], [7, 7]]
+// console.log(matrixAddition(matrixA, matrixC)); // [[1, 5], [4, 6]]
+// console.log(matrixAddition(matrixB, matrixC)); // [[8, 1], [3, -1]]
+// console.log(matrixAddition(matrixD, matrixE)); // [[2, -5], [19, 14], [6, 4]]
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+Define a function called `transpose`` 
+  that accepts a two-dimensional array as a parameter and 
+    returns a new version of the array
+      with its columns and rows switched. 
+      See test cases for examples
+
+I: 2D array
+O: A new Array.
+
+1.define the function transpose that takes in a 2d array.
+  2. declare the NEW outer array variable.
+  2.2 loop through the outerarrayindex to target the rows. 
+  2.3 declare the NEW innerArray variable
+    3. loop through the innerarrayindex to target the columns.
+      4. 
+
+
+*/
+
+let transpose = function(array){                
+  let outerArray = [];                           
+  for(let i = 0; i < array[0].length; i++){        
+    let innerArray = [];                         
+    for (let j = 0; j < array.length; j++){   
+        innerArray.push(array[j][i]);            
+    }
+    outerArray.push(innerArray);                 
+  }
+  return outerArray;                             
+}
+
+let arr3 = [
+  [1, 2, 3],                                                 
+  [4, 5, 6],
+  [7, 8, 9],
+];
+// console.log(transpose(arr3)); // prints: [
+                              //           [1, 4, 7],
+                              //           [2, 5, 8],
+                              //           [3, 6, 9]
+                              //         ]
+
+let arr4 = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+// console.log(transpose(arr4)); // prints: [
+                              //           [1, 3, 5],
+                              //           [2, 4, 6]
+                              //         ]
+/*---------------------------------------------------------------------------------------------------------------------------*/
+let initials = function(name){
+  let splitNames = name.split(' ');
+  let initals = '';
+  console.log(splitNames)
+  for(let i = 0; i < splitNames.length; i++){
+    let newArray = [];
+      for(let j = 0; j < splitNames[i].length; j++){
+        let character = splitNames[j];
+          newArray.push(splitNames[character].indexOf(0));
+      }
+      let initals = newArray.join(' ');
+  }
+  return initals;
+}
+
+
+// console.log(initials('anna paschall')); // 'AP'
+// console.log(initials('Mary La Grange')); // 'MLG'
+// console.log(initials('brian crawford scott')); // 'BCS'
+// console.log(initials('Benicio Monserrate Rafael del Toro Sánchez')); // 'BMRDTS'
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+// Writing Objects Now!
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+/* 
+Write a function catBuilder(name, color, toys) that returns a cat object with the corresponding properties.
+*/
+
+
+let catBuilder = (name, color, toys) => {
+    let obj = {
+      name: name,
+      color: color,
+      toys: toys,
+    }
+    return obj;
+};
+
+// console.log(catBuilder("Whiskers", "black", ["scratching-post", "yarn"]));
+// prints: { name: 'Whiskers', color: 'black', toys: ['scratching-post', 'yarn'] }
+
+// console.log(catBuilder("Nyan", "rainbow", ["poptarts"]));
+// prints: { name: 'Nyan', color: 'rainbow', toys: [ 'poptarts' ] }
+
+/*
+In this practice, you will practice navigating objects that are nested within
+an array.
+ Given the below array, write a function printNames that prints the
+name of every object in the array.
+
+I: 
+O: 
+*/
+
+const users = [
+  {
+      name: "Gerald",
+      age: 23,
+      height: 68
+  },
+  {
+      name: "Winnie",
+      age: 35,
+      height: 62
+  },
+  {
+      name: "Peter",
+      age: 61,
+      height: 72
+  }
+]
+
+const printNames = users => {
+  for(let i = 0; i < users.length; i++){
+    // console.log(users[i].name);
+  }
+}
+
+// printNames(users)                   // Gerald Winnie Peter
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*
+In this exercise, you will learn to use the Array.find() method which will be useful to know. 
+The Array.find() method accepts a callback function that specifies the "find" condition(s) and returns the first element that satisfies the condition(s). 
+Check out the documentation here.
+
+
+Given the friends array below, use the Array.find() method to get the first friend whose name contains 3 or more vowels and print their name.
+
+I: array of objects
+O: the NAME that has 3 or more vowels.
+
+1.
+*/
+
+
+
+
+
+const friends = [
+  {
+      name: "Albert",
+      yearsOfFriendship: 3
+  },
+  {
+      name: "Angela",
+      yearsOfFriendship: 2
+  },
+  {
+      name: "Freddy",
+      yearsOfFriendship: 8
+  },
+  {
+      name: "Agatha",
+      yearsOfFriendship: 6
+  }
+];
+let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+// Hint: create an array of vowels to use in your solution.
+const threeVowelFriend = friends.find(friend => {
+  let count = 0;
+  let vowels = 'aieouAIEOU';
+  let name = friend.name;
+  for (let i = 0; i < name.length; i++){
+    if (vowels.includes(name[i])){
+      count += 1;
+    }
+  }
+  return count > 2;
+});
+// console.log(threeVowelFriend.name);             // Angela
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/* 
+Trying to create the My filter function. trying to impliment the array.filter() method but using a callback.
+
+
+*/
+
+// let words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter((word) => word.length > 6);
+
+// console.log(result);
+
+let words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+let myFilter = (words, cb) => {
+  let newArray = [];
+  for(let i = 0; i < words.length; i++){
+    let singleWord = words[i];
+    if(cb(singleWord)){
+      newArray.push(singleWord);
+    }
+  }
+  return newArray;
+}
+
+console.log(myFilter(words, (el) => el.length >= 6));
