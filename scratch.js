@@ -1197,28 +1197,33 @@ let gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 let compareStr = function(str1, str2) {
+  
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 let createArray = function(str) {
-  let newArray = [];
-  let strSplit = str.split('');
-  if(!strSplit.length) return '';
+  
 };
-
-console.log(createArray("happy"))
 // 17. Reverse the order of an array
 let reverseArr = function(array) {
+  if(!array.length) return [];
+  return [array.pop(), ...reverseArr(array)]
 };
 
+// console.log(reverseArr([1, 2, 3, 4, 5]))
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
+let newArr = [];
 let buildList = function(value, length) {
+  if(newArr.length === length) return;
+  newArr.push(value)
+  buildList(value, length)
+  return newArr;
+}
 
-};
-
+// console.log(buildList(0,5)) // [0,0,0,0,0]
 // 19. Implement FizzBuzz. Given integer n, return an array of the string representations of 1 to n.
 // For multiples of three, output 'Fizz' instead of the number.
 // For multiples of five, output 'Buzz' instead of the number.
@@ -1231,6 +1236,14 @@ let fizzBuzz = function(n) {
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 let countOccurrence = function(array, value) {
+  let obj = {}
+  if(!array.length) return [];
+  const el = array.shift();
+  if(obj[el]){
+    obj[el]++
+  } else {
+    obj[el] = 1
+  }
 };
 
 // 21. Write a recursive version of map.
@@ -1243,6 +1256,7 @@ let rMap = function(array, callback) {
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
 let countKeysInObj = function(obj, key) {
+
 };
 
 // 23. Write a function that counts the number of times a value occurs in an object.
