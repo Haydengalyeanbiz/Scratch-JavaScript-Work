@@ -1178,33 +1178,6 @@ let multiply = function(x, y) {
   return x + multiply(x, y - 1);
 };
 // console.log(multiply(6,5))
-// 13. Write a function that divides two numbers without using the / operator or
-// Math methods to arrive at an approximate quotient (ignore decimal endings).
-let divide = function(x, y) {
-
-};
-
-// 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
-// integers is the greatest integer that divides both x and y with no remainder.
-// gcd(4,36); // 4
-// http://www.cse.wustl.edu/~kjg/cse131/Notes/Recursion/recursion.html
-// https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-let gcd = function(x, y) {
-};
-
-// 15. Write a function that compares each character of two strings and returns true if
-// both are identical.
-// compareStr('house', 'houses') // false
-// compareStr('tomato', 'tomato') // true
-let compareStr = function(str1, str2) {
-  
-};
-
-// 16. Write a function that accepts a string and creates an array where each letter
-// occupies an index of the array.
-let createArray = function(str) {
-  
-};
 // 17. Reverse the order of an array
 let reverseArr = function(array) {
   if(!array.length) return [];
@@ -1222,16 +1195,6 @@ let buildList = function(value, length) {
   buildList(value, length)
   return newArr;
 }
-
-// console.log(buildList(0,5)) // [0,0,0,0,0]
-// 19. Implement FizzBuzz. Given integer n, return an array of the string representations of 1 to n.
-// For multiples of three, output 'Fizz' instead of the number.
-// For multiples of five, output 'Buzz' instead of the number.
-// For numbers which are multiples of both three and five, output “FizzBuzz” instead of the number.
-// fizzBuzz(5) // ['1','2','Fizz','4','Buzz']
-let fizzBuzz = function(n) {
-};
-
 // 20. Count the occurrence of a value in a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
@@ -1246,137 +1209,52 @@ let countOccurrence = function(array, value) {
   }
 };
 
-// 21. Write a recursive version of map.
-// rMap([1,2,3], timesTwo); // [2,4,6]
-let rMap = function(array, callback) {
-};
+/*
+Define a function called validHexCode that returns true if its string
+parameter is a valid hex code.
+*/
+let validHexCode = (string) => {
 
-// 22. Write a function that counts the number of times a key occurs in an object.
-// let obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
-// countKeysInObj(obj, 'r') // 1
-// countKeysInObj(obj, 'e') // 2
-let countKeysInObj = function(obj, key) {
+}
 
-};
+// console.log(validHexCode("#123456"));  // true
+// console.log(validHexCode("!123456"));  // false
+// console.log(validHexCode("#123"));     // false
+// console.log(validHexCode("#1234567")); // false
+// console.log(validHexCode("1234567"));  // false
+// console.log(validHexCode("123456"));   // false
+// console.log(validHexCode("#ABCDEF"));  // true
+// console.log(validHexCode("#abcDEF"));  // true
+// console.log(validHexCode("#88ef29"));  // true
+// console.log(validHexCode("#222!E4"));  // false
 
-// 23. Write a function that counts the number of times a value occurs in an object.
-// let obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
-// countValuesInObj(obj, 'r') // 2
-// countValuesInObj(obj, 'e') // 1
-let countValuesInObj = function(obj, value) {
-};
+/*---------------------------------------------------------------------------------------------------------------------------*/
 
-// 24. Find all keys in an object (and nested objects) by a provided name and rename
-// them to a provided new name while preserving the value stored at that key.
-let replaceKeysInObj = function(obj, oldKey, newKey) {
-};
+/* 
+Write a function popper(array, num) 
+that takes in an array and a number as args. 
+The function should remove the last num elements from the array, 
+mutating the original array. 
+The function should return 
+a new array containing the elements that were removed. 
+*/
+let popper = function(array, num){
+  let newArr = [];
+  for(let i = array.length; i > num; i--){
+    newArr.push(array.pop())
+    if(newArr.length = num){
+      break
+    }
+  }
+  return newArr;
+}
 
-// 25. Get the first n Fibonacci numbers. In the Fibonacci sequence, each subsequent
-// number is the sum of the previous two.
-// Example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.....
-// fibonacci(5); // [0,1,1,2,3,5]
-// Note: The 0 is not counted.
-let fibonacci = function(n) {
-};
+let array1 = ['a', 'b', 'c', 'd', 'e'];
+console.log(popper(array1, 2)); // [ 'e', 'd' ]
+console.log(array1); // [ 'a', 'b', 'c' ]
 
-// 26. Return the Fibonacci number located at index n of the Fibonacci sequence.
-// [0,1,1,2,3,5,8,13,21]
-// nthFibo(5); // 5
-// nthFibo(7); // 13
-// nthFibo(3); // 2
-let nthFibo = function(n) {
-};
+let array2 = ['kale', 'spinach', 'collard greens', 'cabbage'];
+console.log(popper(array2, 1)); // [ 'cabbage' ]
+console.log(array2); // [ 'kale', 'spinach', 'collard greens' ]
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 
-// 27. Given an array of words, return a new array containing each word capitalized.
-// let words = ['i', 'am', 'learning', 'recursion'];
-// capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-let capitalizeWords = function(array) {
-};
-
-// 28. Given an array of strings, capitalize the first letter of each index.
-// capitalizeFirst(['car','poop','banana']); // ['Car','Poop','Banana']
-let capitalizeFirst = function(array) {
-};
-
-// 29. Return the sum of all even numbers in an object containing nested objects.
-// let obj1 = {
-//   a: 2,
-//   b: {b: 2, bb: {b: 3, bb: {b: 2}}},
-//   c: {c: {c: 2}, cc: 'ball', ccc: 5},
-//   d: 1,
-//   e: {e: {e: 2}, ee: 'car'}
-// };
-// nestedEvenSum(obj1); // 10
-let nestedEvenSum = function(obj) {
-};
-
-// 30. Flatten an array containing nested arrays.
-// flatten([1,[2],[3,[[4]]],5]); // [1,2,3,4,5]
-let flatten = function(array) {
-};
-
-// 31. Given a string, return an object containing tallies of each letter.
-// letterTally('potato'); // {p:1, o:2, t:2, a:1}
-let letterTally = function(str, obj) {
-};
-
-// 32. Eliminate consecutive duplicates in a list. If the list contains repeated
-// elements they should be replaced with a single copy of the element. The order of the
-// elements should not be changed.
-// compress([1,2,2,3,4,4,5,5,5]) // [1,2,3,4,5]
-// compress([1,2,2,3,4,4,2,5,5,5,4,4]) // [1,2,3,4,2,5,4]
-let compress = function(list) {
-};
-
-// 33. Augment every element in a list with a new value where each element is an array
-// itself.
-// augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
-let augmentElements = function(array, aug) {
-};
-
-// 34. Reduce a series of zeroes to a single 0.
-// minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
-// minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-let minimizeZeroes = function(array) {
-};
-
-// 35. Alternate the numbers in an array between positive and negative regardless of
-// their original sign. The first number in the index always needs to be positive.
-// alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
-// alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-let alternateSign = function(array) {
-};
-
-// 36. Given a string, return a string with digits converted to their word equivalent.
-// Assume all numbers are single digits (less than 10).
-// numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-let numToText = function(str) {
-};
-
-
-// *** EXTRA CREDIT ***
-
-// 37. Return the number of times a tag occurs in the DOM.
-let tagCount = function(tag, node) {
-};
-
-// 38. Write a function for binary search.
-// let array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-// binarySearch(array, 5) // 5
-// https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search
-let binarySearch = function(array, target, min, max) {
-};
-
-// 39. Write a merge sort function.
-// mergeSort([34,7,23,32,5,62]) // [5,7,23,32,34,62]
-// https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/divide-and-conquer-algorithms
-let mergeSort = function(array) {
-};
-
-// 40. Deeply clone objects and arrays.
-// let obj1 = {a:1,b:{bb:{bbb:2}},c:3};
-// let obj2 = clone(obj1);
-// console.log(obj2); // {a:1,b:{bb:{bbb:2}},c:3}
-// obj1 === obj2 // false
-let clone = function(input) {
-};
