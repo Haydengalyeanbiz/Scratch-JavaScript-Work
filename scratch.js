@@ -1088,6 +1088,7 @@ let arraySum = function(array) {
   return sum;
 };
 
+console.log(arraySum([1,[2,3],[[4]],5]))
 // console.log(arraySum([1,[2,3],[[4]],5])); // 15
 // 4. Check if a number is even.
 // isEven(2) // true
@@ -1173,11 +1174,16 @@ let modulo = function(x, y) {
 // console.log(modulo(17,5)) // 2
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
+
 let multiply = function(x, y) {
   if(y === 0) return 0;
   return x + multiply(x, y - 1);
 };
 // console.log(multiply(6,5))
+
+
+
+
 // 17. Reverse the order of an array
 let reverseArr = function(array) {
   if(!array.length) return [];
@@ -1249,12 +1255,42 @@ let popper = function(array, num){
   return newArr;
 }
 
-let array1 = ['a', 'b', 'c', 'd', 'e'];
-console.log(popper(array1, 2)); // [ 'e', 'd' ]
-console.log(array1); // [ 'a', 'b', 'c' ]
+// let array1 = ['a', 'b', 'c', 'd', 'e'];
+// console.log(popper(array1, 2)); // [ 'e', 'd' ]
+// console.log(array1); // [ 'a', 'b', 'c' ]
 
-let array2 = ['kale', 'spinach', 'collard greens', 'cabbage'];
-console.log(popper(array2, 1)); // [ 'cabbage' ]
-console.log(array2); // [ 'kale', 'spinach', 'collard greens' ]
+// let array2 = ['kale', 'spinach', 'collard greens', 'cabbage'];
+// console.log(popper(array2, 1)); // [ 'cabbage' ]
+// console.log(array2); // [ 'kale', 'spinach', 'collard greens' ]
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
+/*Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
 
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.*/
+
+ 
+
+//Example 1:
+
+// Input: grid = [
+//   ["1","1","1","1","0"],
+//   ["1","1","0","1","0"],
+//   ["1","1","0","0","0"],
+//   ["0","0","0","0","0"]
+// ]
+// Output: 1
+//Example 2:
+
+// Input: grid = [
+//   ["1","1","0","0","0"],
+//   ["1","1","0","0","0"],
+//   ["0","0","1","0","0"],
+//   ["0","0","0","1","1"]
+// ]
+// Output: 3
+ 
+
+Constraints:
+m == grid.length
+n == grid[i].length
+1 <= m, n <= 300
+grid[i][j] is '0' or '1'.
